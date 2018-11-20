@@ -2,43 +2,30 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
- client.user.setGame('s!help | *By iTzMoody','https://www.twitch.tv/peery13');
-  console.log('')
-  console.log('')
-  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-  console.log(`[Start] ${new Date()}`);
-  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
-  console.log('')
-  console.log('Informations :')
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('╚[════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
-  console.log('╚[════════════]╝')
-  console.log('')
-  console.log('')
 });
-client.on('ready', async() => {
-var server = "499933149019766785"; 
-var channel = "499933149573283862";
-    setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('كودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودز ')
-    },305);
-})
-
-client.on('ready', async() => {
-var server = "499933149019766785"; 
-var channel = "499933149573283862";
-    setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('#daily')
-    },86400);
-})
-client.login(process.env.BOT_TOKEN);
+const devs = ["402842588908093440"]; /// الاي دي حقك
+const karzoprfix = ["-"];
+client.on('message', message => {
+    var argresult = message.content.split(`).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+ 
+  if (message.content.startsWith(karzoprfix + 'ply')) {/////بلاينق
+    client.user.setGame(argresult);
+      message.channel.send(:white_check_mark:   ${argresult} Done Sir)
+  } else
+  if (message.content.startsWith(karzoprfix + 'wt')) {////واتشنق
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(:white_check_mark:   ${argresult} Done Sir)
+  } else
+  if (message.content.startsWith(karzoprfix + 'st')) {////ستريمنق
+    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+      message.channel.send(:white_check_mark:)
+  } else
+  if (message.content.startsWith(karzoprfix + 'ls')) {/////////ليسننق
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(:white_check_mark:   ${argresult} Done Sir`)
+client.user.setStatus("dnd")
+  }
+});
+client.login("YourToken");////التوكن
+///في حالة استعمالك هيروكو: client.login(process.env.BOT_TOKEN);
